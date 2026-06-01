@@ -1,0 +1,52 @@
+// TWO SUM PROBLEM
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int [] arr = new int[2];
+        for(int i = 0 ; i < nums.length ; i++ ){
+            for(int j = i+1; j < nums.length ; j++){
+                if(nums[i] + nums[j] == target){
+                    arr[0] = i;
+                    arr[1] = j;
+                    break;
+                }
+            }
+        }
+         return arr;
+    }
+}
+
+// Remove Duplicates from Sorted Array
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+
+        int left = 0;
+
+        for (int right = 1; right < nums.length; right++) {
+            if (nums[right] != nums[left]) {
+                left++;
+                nums[left] = nums[right];
+            }
+        }
+
+        return left + 1;
+    }
+}
+
+// Best Time to Buy and Sell Stock
+class Solution {
+    public int maxProfit(int[] prices) {
+        int buy = prices[0];
+        int profit = 0;
+        for(int i = 0 ; i < prices.length; i++){
+            if(prices[i] < buy){
+                buy = prices[i];
+            }
+            else if(prices[i] - buy > profit ){
+                profit = prices[i] - buy;
+            }
+        }
+        return profit;
+
+    }
+}
