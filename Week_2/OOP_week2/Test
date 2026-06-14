@@ -1,0 +1,22 @@
+package music.live;
+
+import music.Playable;
+import music.string.Veena;
+import music.wind.Saxophone;
+
+public class Test {
+    public static void main(String[] args) {
+        Veena ve = new Veena();
+        ve.play();
+        Saxophone sp = new Saxophone();
+        sp.play();
+
+
+        Playable P;
+        P = new Veena();
+        P.play();
+        P= new Saxophone();
+        P.play();
+    }
+
+}
